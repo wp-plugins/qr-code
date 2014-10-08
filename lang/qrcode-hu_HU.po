@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: QR code widget\n"
+"POT-Creation-Date: 2013-03-01 18:08+0100\n"
+"PO-Revision-Date: 2013-03-01 18:10+0100\n"
+"Last-Translator: Tomek <tomek.maestro@gmail.com>\n"
+"Language-Team: Tomek <tomek.maestro@gmail.com>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wp\\wp-content\\plugins\\qrcode\n"
+
+#: C:\xampp\htdocs\wp\wp-content\plugins\qrcode/qrcode.php:19
+msgid "It lets appear the QR-code of the given site in the slidebar"
+msgstr "Megjeleníti az oldalsávban az adott oldal QR kódját"
+
+#: C:\xampp\htdocs\wp\wp-content\plugins\qrcode/qrcode.php:21
+#: C:\xampp\htdocs\wp\wp-content\plugins\qrcode/qrcode.php:45
+msgid "QR code widget"
+msgstr "QR kód widget"
