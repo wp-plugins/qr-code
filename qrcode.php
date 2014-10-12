@@ -5,10 +5,11 @@ Description: It lets appear the QR-code of the given site in the slidebar
 Author: Tomek
 Author URI: http://wp-learning.net
 Plugin URI: http://wp-learning.net
-Version: 0.2
+Version: 0.3
 */
 
 add_action( 'widgets_init', 'qr_code' );
+add_shortcode('qrcode','qrcode_shortcode');
 load_plugin_textdomain( 'qrcode', '', dirname( plugin_basename( __FILE__ ) ) . '/lang' );
 
 function qr_code() {
@@ -24,10 +25,7 @@ function WP_Widget_QR_Code() {
 
 	function widget( $args, $instance ) {
 		extract( $args );
-		$host = $_SERVER["HTTP_HOST"];
-		$scheme = $_SERVER["REQUEST_SCHEME"];
-		$url = $_SERVER["REQUEST_URI"];;;
-		$full_url = $scheme."://".$host."/".$url;
+		$full_url = get_bloginfo('url');
 		$title = apply_filters('widget_title', $instance['title'] );
 		echo $before_widget;
 		if ( $title )
@@ -54,4 +52,8 @@ function WP_Widget_QR_Code() {
 	}
 }
 
+function qrcode_shortcode( $atts, $content = null ) {
+	$full_url = get_bloginfo('url');
+    echo "<div class='qrcode'><img src='http://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=$full_url' width='150' height='150'></div>";
+}
 ?>

@@ -14,19 +14,19 @@ It lets appear the QR-code of the given site in the slidebar
 == Installation ==
 
 1. Extract the plugin folder from the downloaded ZIP file.
-2. Upload BAW qrcode to your /wp-content/plugins/ directory.
+2. Upload qrcode to your /wp-content/plugins/ directory.
 3. Activate the plugin from the "Plugins" page in your Dashboard.
-4. Activate the widget through the 'Widgets' menu in WordPress
+4. Activate the widget or using [qrcode] shortcode
 
 == Frequently Asked Questions ==
 None
 
 == Screenshots ==
-None
+There are no screenshots yet.
 
 == Upgrade Notice ==
-Nothing
+None
 
 == Changelog ==
-
-None
+= 0.3 =
+* Added shortcode
