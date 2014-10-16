@@ -28,7 +28,7 @@ or
 None
 
 == Screenshots ==
-1. The widget settings
+1. The widget settings , `/assets/screenshot-1.png`
 
 == Upgrade Notice ==
 None
