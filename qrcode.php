@@ -5,7 +5,7 @@ Description: It lets appear the QR-code of the given site in the slidebar
 Author: Tomek
 Author URI: http://wp-learning.net
 Plugin URI: http://wp-learning.net
-Version: 1.0
+Version: 1.1
 */
 
 add_action( 'widgets_init', 'qr_code' );
@@ -125,8 +125,14 @@ function WP_Widget_QR_Code() {
 }
 
 function qrcode_shortcode( $atts, $content = null ) {
-    extract(shortcode_atts(array("url" => get_bloginfo('url'), "width" => "150", "height" => "150", "color" => "ffffff", "bgcolor" => "000000", "margin" => "1"), $atts));
+    extract(shortcode_atts(array("url" => get_bloginfo('url'), "width" => "150", "height" => "150", "color" => "ffffff", "bgcolor" => "000000", "margin" => "1", "before" => "", "after" => ""), $atts));
 	$size = $width.'x'.$height;
-    echo "<div class='qrcode'><img src='http://api.qrserver.com/v1/create-qr-code/?size=$size&amp;data=$url&color=$color&bgcolor=$bgcolor&margin=$margin' width='$width' height='$height'></div>";
+	if ( $before ) {
+		$before = $before.'<br>';
+	}
+	if ( $after ) {
+		$after = '<br>'.$after;
+	}
+    echo "<div class='qrcode' style='width:ßwidth;height:$height;text-align:center;'>".$before."<img src='http://api.qrserver.com/v1/create-qr-code/?size=$size&amp;data=$url&color=$color&bgcolor=$bgcolor&margin=$margin' width='$width' height='$height'>".$after."</div>";
 }
 ?>

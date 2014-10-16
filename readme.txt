@@ -5,6 +5,8 @@ Donate link: http://wp-learning.net/blog/felajanl
 Requires at least: 3.0
 Tested up to: 3.5.1
 Stable tag: trunk
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 It lets appear the QR-code of the given site in the slidebar 
 
@@ -28,12 +30,16 @@ or
 None
 
 == Screenshots ==
-1. The widget settings , `/assets/screenshot-1.png`
+1. screenshot-1.png
+1. screenshot-2.png
 
 == Upgrade Notice ==
 None
 
 == Changelog ==
+= 1.1 =
+* Updated shortcode
+
 = 1.0 =
 * Added more options
 
