@@ -18,6 +18,10 @@ How to use shortcode in your post or page?
 or
 
 [qrcode url="http://mysite.com" margin="20" color="ff0000" bgcolor="00ff00" width="100" height="100"]
+
+CSS:
+
+.qrcode { float: right; }
  
 == Installation ==
 
