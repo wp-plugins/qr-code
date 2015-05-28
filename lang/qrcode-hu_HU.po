@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: QR Code\n"
-"POT-Creation-Date: 2014-10-16 10:25+0100\n"
-"PO-Revision-Date: 2014-10-16 10:36+0100\n"
+"POT-Creation-Date: 2015-05-28 18:03+0100\n"
+"PO-Revision-Date: 2015-05-28 18:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: Tomek <tomek.maestro@gmail.com>\n"
 "Language: hu_HU\n"
@@ -14,49 +14,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-SearchPath-0: c:\\wamp\\www\\wp2\\wp-content\\plugins\\trunk\n"
+"X-Poedit-SearchPath-0: c:\\wamp\\www\\wp42\\wp-content\\plugins\\qr-code\n"
 
-#: c:\wamp\www\wp2\wp-content\plugins\trunk/qrcode.php:21
+#: c:\wamp\www\wp42\wp-content\plugins\qr-code/qrcode.php:21
 msgid "It lets appear the QR-code of the given site in the slidebar"
 msgstr "Megjeleníti az oldalsávban az adott oldal QR kódját"
 
-#: c:\wamp\www\wp2\wp-content\plugins\trunk/qrcode.php:23
-#: c:\wamp\www\wp2\wp-content\plugins\trunk/qrcode.php:77
+#: c:\wamp\www\wp42\wp-content\plugins\qr-code/qrcode.php:23
+#: c:\wamp\www\wp42\wp-content\plugins\qr-code/qrcode.php:68
 msgid "QR code widget"
 msgstr "QR kód widget"
 
-#: c:\wamp\www\wp2\wp-content\plugins\trunk/qrcode.php:89
+#: c:\wamp\www\wp42\wp-content\plugins\qr-code/qrcode.php:77
 msgid "Title:"
 msgstr "Cím:"
 
-#: c:\wamp\www\wp2\wp-content\plugins\trunk/qrcode.php:93
+#: c:\wamp\www\wp42\wp-content\plugins\qr-code/qrcode.php:81
 msgid "URL:"
 msgstr "URL:"
 
-#: c:\wamp\www\wp2\wp-content\plugins\trunk/qrcode.php:96
-msgid "Width:"
-msgstr "Szélesség:"
+#: c:\wamp\www\wp42\wp-content\plugins\qr-code/qrcode.php:84
+msgid "Size:"
+msgstr "Méret:"
 
-#: c:\wamp\www\wp2\wp-content\plugins\trunk/qrcode.php:100
-msgid "Height:"
-msgstr "Magasság:"
-
-#: c:\wamp\www\wp2\wp-content\plugins\trunk/qrcode.php:104
-msgid "Foreground Color (without double-cross):"
-msgstr "Előtér színe (kettőskereszt nélkül):"
-
-#: c:\wamp\www\wp2\wp-content\plugins\trunk/qrcode.php:108
-msgid "Background Color (without double-cross):"
-msgstr "Háttér színe (kettőskereszt nélkül):"
-
-#: c:\wamp\www\wp2\wp-content\plugins\trunk/qrcode.php:112
+#: c:\wamp\www\wp42\wp-content\plugins\qr-code/qrcode.php:88
 msgid "Margin:"
 msgstr "Margó:"
 
-#: c:\wamp\www\wp2\wp-content\plugins\trunk/qrcode.php:116
+#: c:\wamp\www\wp42\wp-content\plugins\qr-code/qrcode.php:92
 msgid "Text before image:"
 msgstr "Szöveg a kép előtt:"
 
-#: c:\wamp\www\wp2\wp-content\plugins\trunk/qrcode.php:120
+#: c:\wamp\www\wp42\wp-content\plugins\qr-code/qrcode.php:96
 msgid "Text after image:"
 msgstr "Szöveg a kép után:"

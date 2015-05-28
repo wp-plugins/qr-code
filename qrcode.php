@@ -5,7 +5,7 @@ Description: It lets appear the QR-code of the given site in the slidebar
 Author: Tomek
 Author URI: http://wp-learning.net
 Plugin URI: http://wp-learning.net
-Version: 1.1
+Version: 1.2
 */
 
 add_action( 'widgets_init', 'qr_code' );
@@ -27,14 +27,11 @@ function WP_Widget_QR_Code() {
 		extract( $args );
 		$title = apply_filters('widget_title', $instance['title'] );
 		$url = $instance['url'];
-		$width = $instance['width'];
-		$height = $instance['height'];
-		$color = $instance['color'];
-		$bgcolor = $instance['bgcolor'];
+		$size = $instance['size'];
 		$margin = $instance['margin'];
 		$before = $instance['before'];
 		$after = $instance['after'];
-		$size = $width.'x'.$height;
+		$sizes = $size.'x'.$size;
 		echo $before_widget;
 		if ( $before ) {
 			$before = $before.'<br><br>';
@@ -44,7 +41,7 @@ function WP_Widget_QR_Code() {
 		}
 		if ( $title )
 			echo $before_title . $title . $after_title;
-            echo "<center>".$before."<img src='http://api.qrserver.com/v1/create-qr-code/?size=$size&amp;data=$url&color=$color&bgcolor=$bgcolor&margin=$margin' width='$width' height='$height'>".$after."</center>";
+            echo "<center>".$before."<img src='http://api.qrserver.com/v1/create-qr-code/?size=$sizes&data=$url&margin=$margin' width='$size' height='$size'>".$after."</center>";
 			echo $after_widget;
 	}
 
@@ -52,10 +49,7 @@ function WP_Widget_QR_Code() {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags( $new_instance['title'] );
 		$instance['url'] = strip_tags( $new_instance['url'] );
-		$instance['width'] = strip_tags( $new_instance['width'] );
-		$instance['height'] = strip_tags( $new_instance['height'] );
-		$instance['color'] = strip_tags( $new_instance['color'] );
-		$instance['bgcolor'] = strip_tags( $new_instance['bgcolor'] );
+		$instance['size'] = strip_tags( $new_instance['size'] );
 		$instance['margin'] = strip_tags( $new_instance['margin'] );
 		$instance['before'] = strip_tags( $new_instance['before'] );
 		$instance['after'] = strip_tags( $new_instance['after'] );
@@ -66,20 +60,14 @@ function WP_Widget_QR_Code() {
 		if( $instance) {
 			$title = esc_attr($instance['title']);
 			$url = esc_attr($instance['url']);
-			$width = esc_attr($instance['width']);
-			$height = esc_attr($instance['height']);
-			$color = esc_attr($instance['color']);
-			$bgcolor = esc_attr($instance['bgcolor']);
+			$size = esc_attr($instance['size']);
 			$margin = esc_attr($instance['margin']);
 			$before = esc_attr($instance['before']);
 			$after = esc_attr($instance['after']);
 		} else {
 			$title =  __('QR code widget', 'qrcode');
 			$url = get_bloginfo('url');
-			$width = '150';
-			$height = '150';
-			$color = 'ffffff';
-			$bgcolor = '000000';
+			$size = '150';
 			$margin = '1';
 			$before = '';
 			$after = '';
@@ -93,21 +81,9 @@ function WP_Widget_QR_Code() {
 <label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('URL:', 'qrcode'); ?></label> 
 <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" /> 
 </p> 
-<label for="<?php echo $this->get_field_id('width'); ?>"><?php _e('Width:', 'qrcode'); ?></label> 
-<input class="widefat" id="<?php echo $this->get_field_id('width'); ?>" name="<?php echo $this->get_field_name('width'); ?>" type="text" value="<?php echo $width; ?>" /> 
+<label for="<?php echo $this->get_field_id('size'); ?>"><?php _e('Size:', 'qrcode'); ?></label> 
+<input class="widefat" id="<?php echo $this->get_field_id('size'); ?>" name="<?php echo $this->get_field_name('size'); ?>" type="text" value="<?php echo $size; ?>" /> 
 </p> 
-<p> 
-<label for="<?php echo $this->get_field_id('height'); ?>"><?php _e('Height:', 'qrcode'); ?></label> 
-<input class="widefat" id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" type="text" value="<?php echo $height; ?>" /> 
-</p>
-<p> 
-<label for="<?php echo $this->get_field_id('color'); ?>"><?php _e('Foreground Color (without double-cross):', 'qrcode'); ?></label> 
-<input class="widefat" id="<?php echo $this->get_field_id('color'); ?>" name="<?php echo $this->get_field_name('color'); ?>" type="text" value="<?php echo $color; ?>" /> 
-</p>
-<p> 
-<label for="<?php echo $this->get_field_id('bgcolor'); ?>"><?php _e('Background Color (without double-cross):', 'qrcode'); ?></label> 
-<input class="widefat" id="<?php echo $this->get_field_id('bgcolor'); ?>" name="<?php echo $this->get_field_name('bgcolor'); ?>" type="text" value="<?php echo $bgcolor; ?>" /> 
-</p>
 <p> 
 <label for="<?php echo $this->get_field_id('margin'); ?>"><?php _e('Margin:', 'qrcode'); ?></label> 
 <input class="widefat" id="<?php echo $this->get_field_id('margin'); ?>" name="<?php echo $this->get_field_name('margin'); ?>" type="text" value="<?php echo $margin; ?>" /> 
@@ -125,14 +101,14 @@ function WP_Widget_QR_Code() {
 }
 
 function qrcode_shortcode( $atts, $content = null ) {
-    extract(shortcode_atts(array("url" => get_bloginfo('url'), "width" => "150", "height" => "150", "color" => "ffffff", "bgcolor" => "000000", "margin" => "1", "before" => "", "after" => ""), $atts));
-	$size = $width.'x'.$height;
+    extract(shortcode_atts(array("url" => get_bloginfo('url'), "size" => "150", "margin" => "1", "before" => "", "after" => ""), $atts));
+	$sizes = $size.'x'.$size;
 	if ( $before ) {
 		$before = $before.'<br>';
 	}
 	if ( $after ) {
 		$after = '<br>'.$after;
 	}
-    echo "<div class='qrcode' style='width:ßwidth;height:$height;text-align:center;'>".$before."<img src='http://api.qrserver.com/v1/create-qr-code/?size=$size&amp;data=$url&color=$color&bgcolor=$bgcolor&margin=$margin' width='$width' height='$height'>".$after."</div>";
+    echo "<div class='qrcode' style='text-align:center;'>".$before."<img src='http://api.qrserver.com/v1/create-qr-code/?size=$sizes&data=$url&margin=$margin' width='$size' height='$size'>".$after."</div>";
 }
 ?>

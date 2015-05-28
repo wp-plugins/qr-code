@@ -3,10 +3,8 @@ Contributors: tomek00
 Tags: qr code, qrcode, widget, shortcode
 Donate link: http://wp-learning.net/blog/felajanl
 Requires at least: 3.4
-Tested up to: 4.1.1
+Tested up to: 4.2.2
 Stable tag: trunk
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 It lets appear the QR-code of the given site in the slidebar 
 
@@ -17,7 +15,7 @@ How to use shortcode in your post or page?
 
 or
 
-[qrcode url="http://mysite.com" margin="20" color="ff0000" bgcolor="00ff00" width="100" height="100"]
+[qrcode url="http://my-site.com" margin="10" size="100" before="QR Code" after="QR Code"] 
 
 CSS:
 
@@ -41,11 +39,4 @@ None
 None
 
 == Changelog ==
-= 1.1 =
-* Updated shortcode
-
-= 1.0 =
-* Added more options
-
-= 0.3 =
-* Added shortcode
+Nome
