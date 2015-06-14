@@ -109,6 +109,6 @@ function qrcode_shortcode( $atts, $content = null ) {
 	if ( $after ) {
 		$after = '<br>'.$after;
 	}
-    echo "<div class='qrcode' style='text-align:center;'>".$before."<img src='http://api.qrserver.com/v1/create-qr-code/?size=$sizes&data=$url&margin=$margin' width='$size' height='$size'>".$after."</div>";
+    return "<div class='qrcode' style='text-align:center;'>".$before."<img src='http://api.qrserver.com/v1/create-qr-code/?size=$sizes&data=$url&margin=$margin' width='$size' height='$size'>".$after."</div>";
 }
 ?>
